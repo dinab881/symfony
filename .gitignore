@@ -21,6 +21,17 @@ app/cache/*
 app/logs/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
+/var/
+!/var/cache
+/var/cache/
+!var/cache/.gitkeep
+!/var/logs
+/var/logs/
+!var/logs/.gitkeep
+!/var/sessions
+/var/sessions/
+!var/sessions/.gitkeep
+!var/SymfonyRequirements.php
 vendor/*
 app/config/parameters.yml
 app/config/parameters_dev.yml
@@ -42,3 +53,5 @@ behat.yml
 robots.txt
 composer.phar
 web/scss/.sass-cache
+/phpunit.xml
+/build/

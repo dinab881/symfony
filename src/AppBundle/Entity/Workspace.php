@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Workspace
+ *
  * @ORM\Table(name="workspace")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\WorkspaceRepository")
  */
@@ -23,9 +24,9 @@ class Workspace
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=45, nullable=false)
+     * @ORM\Column(name="name", type="string", length=45, nullable=false)
      */
-    private $title;
+    private $name;
 
     /**
      * @var string
@@ -34,26 +35,6 @@ class Workspace
      */
     private $description;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="due_date", type="datetime", nullable=false)
-     */
-    private $dueDate;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="attachment", type="boolean", nullable=true)
-     */
-    private $attachment;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="workspace_id", type="string", length=45, nullable=true)
-     */
-    private $workspaceId;
 
 
     /**
@@ -67,27 +48,27 @@ class Workspace
     }
 
     /**
-     * Set title
+     * Set name
      *
-     * @param string $title
+     * @param string $name
      *
      * @return Workspace
      */
-    public function setTitle($title)
+    public function setName($name)
     {
-        $this->title = $title;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get title
+     * Get name
      *
      * @return string
      */
-    public function getTitle()
+    public function getName()
     {
-        return $this->title;
+        return $this->name;
     }
 
     /**
@@ -112,77 +93,5 @@ class Workspace
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Set dueDate
-     *
-     * @param \DateTime $dueDate
-     *
-     * @return Workspace
-     */
-    public function setDueDate($dueDate)
-    {
-        $this->dueDate = $dueDate;
-
-        return $this;
-    }
-
-    /**
-     * Get dueDate
-     *
-     * @return \DateTime
-     */
-    public function getDueDate()
-    {
-        return $this->dueDate;
-    }
-
-    /**
-     * Set attachment
-     *
-     * @param boolean $attachment
-     *
-     * @return Workspace
-     */
-    public function setAttachment($attachment)
-    {
-        $this->attachment = $attachment;
-
-        return $this;
-    }
-
-    /**
-     * Get attachment
-     *
-     * @return boolean
-     */
-    public function getAttachment()
-    {
-        return $this->attachment;
-    }
-
-    /**
-     * Set workspaceId
-     *
-     * @param string $workspaceId
-     *
-     * @return Workspace
-     */
-    public function setWorkspaceId($workspaceId)
-    {
-        $this->workspaceId = $workspaceId;
-
-        return $this;
-    }
-
-    /**
-     * Get workspaceId
-     *
-     * @return string
-     */
-    public function getWorkspaceId()
-    {
-        return $this->workspaceId;
     }
 }
